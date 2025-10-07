@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pro Quiz — Multi Category</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <!-- Category Screen -->
+    <section id="category-screen" class="screen active">
+      <h1>Pro Quiz</h1>
+      <p class="lead">Choose a category and test your knowledge</p>
+      <div class="categories">
+        <button class="cat-btn" data-cat="html">HTML</button>
+        <button class="cat-btn" data-cat="css">CSS</button>
+        <button class="cat-btn" data-cat="js">JavaScript</button>
+      </div>
+      <div class="best-scores" id="best-scores"></div>
+    </section>
+
+    <!-- Start Screen (after choosing category) -->
+    <section id="start-screen" class="screen hidden">
+      <h2 id="cat-title">Category</h2>
+      <p id="cat-desc">Ready to begin?</p>
+      <div class="controls">
+        <label for="difficulty">Difficulty:</label>
+        <select id="difficulty">
+          <option value="easy">Easy</option>
+          <option value="medium" selected>Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+        <button id="start-btn">Start Quiz</button>
+        <button id="back-to-cats" class="ghost">Back</button>
+      </div>
+    </section>
+
+    <!-- Quiz Screen -->
+    <section id="quiz-screen" class="screen hidden">
+      <div class="topbar">
+        <div id="progress">Question 1/5</div>
+        <div id="timer" class="timer timer-good">15s</div>
+      </div>
+
+      <div class="card">
+        <h3 id="question">Question text</h3>
+        <div id="options" class="options"></div>
+      </div>
+
+      <div class="quiz-footer">
+        <button id="next-btn" class="ghost hidden">Next</button>
+      </div>
+    </section>
+
+    <!-- Result Screen -->
+    <section id="result-screen" class="screen hidden">
+      <h2>Results</h2>
+      <p id="result-summary"></p>
+      <div id="result-details" class="result-details"></div>
+      <div class="controls">
+        <button id="retry-btn">Retry</button>
+        <button id="home-btn" class="ghost">Home</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
